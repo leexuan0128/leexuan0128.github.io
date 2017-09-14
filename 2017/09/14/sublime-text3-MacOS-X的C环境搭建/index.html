@@ -9,20 +9,20 @@
   <title>sublime text3 MacOS X的C环境搭建 | xuan&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Sublime Text3 的C环境搭建   有时想运行调试一个小的C语言程序，不想动用VB等庞大的IDE，sublime就成了一个不错的选择，其自身的自动补全，语法高亮等功能非常适合对颜值和效率有要求的朋友。但sublime只是一个编译器，想要运行C程序，还得进行环境的配置，好在其有丰富的插件库供用户选择，网上查了许多mac下的C环境配置，现将搭建步骤分享给大家～供大家参考。  1.打开subl">
-<meta name="keywords" content="技术">
+<meta name="keywords" content="sublime">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sublime text3 MacOS X的C环境搭建">
 <meta property="og:url" content="http://yoursite.com/2017/09/14/sublime-text3-MacOS-X的C环境搭建/index.html">
 <meta property="og:site_name" content="xuan&#39;s blog">
 <meta property="og:description" content="Sublime Text3 的C环境搭建   有时想运行调试一个小的C语言程序，不想动用VB等庞大的IDE，sublime就成了一个不错的选择，其自身的自动补全，语法高亮等功能非常适合对颜值和效率有要求的朋友。但sublime只是一个编译器，想要运行C程序，还得进行环境的配置，好在其有丰富的插件库供用户选择，网上查了许多mac下的C环境配置，现将搭建步骤分享给大家～供大家参考。  1.打开subl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/sublimetext3">
-<meta property="og:image" content="http://yoursite.com/images/sublime">
-<meta property="og:updated_time" content="2017-09-14T08:33:21.000Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fjj7bmzswvj30j90kldgp.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fjj7clg4p4j30b80cst94.jpg">
+<meta property="og:updated_time" content="2017-09-14T09:18:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sublime text3 MacOS X的C环境搭建">
 <meta name="twitter:description" content="Sublime Text3 的C环境搭建   有时想运行调试一个小的C语言程序，不想动用VB等庞大的IDE，sublime就成了一个不错的选择，其自身的自动补全，语法高亮等功能非常适合对颜值和效率有要求的朋友。但sublime只是一个编译器，想要运行C程序，还得进行环境的配置，好在其有丰富的插件库供用户选择，网上查了许多mac下的C环境配置，现将搭建步骤分享给大家～供大家参考。  1.打开subl">
-<meta name="twitter:image" content="http://yoursite.com/images/sublimetext3">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fjj7bmzswvj30j90kldgp.jpg">
   
     <link rel="alternate" href="/atom.xml" title="xuan&#39;s blog" type="application/atom+xml">
   
@@ -65,14 +65,6 @@
                 Home
             </a>
             
-            <a class="nav-item" href="/">
-                Categories
-            </a>
-            
-            <a class="nav-item" href="/works">
-                My Works
-            </a>
-            
             <a class="nav-item" href="/about">
                 About
             </a>
@@ -87,14 +79,6 @@
             
             <a class="nav-item flex-1" href="/">
                 Home
-            </a>
-            
-            <a class="nav-item flex-1" href="/">
-                Categories
-            </a>
-            
-            <a class="nav-item flex-1" href="/works">
-                My Works
             </a>
             
             <a class="nav-item flex-1" href="/about">
@@ -159,14 +143,14 @@
             
                 <div>
                     
-                         <a class="tag is-post-tag" href="/tags/技术/">技术</a>
+                         <a class="tag is-post-tag" href="/tags/sublime/">sublime</a>
                     
                 </div>
             
         </div>
         <div class="content" style="overflow: auto">
             <h1 id="Sublime-Text3-的C环境搭建"><a href="#Sublime-Text3-的C环境搭建" class="headerlink" title="Sublime Text3 的C环境搭建"></a>Sublime Text3 的C环境搭建</h1><hr>
-<p><img src="/images/sublimetext3" alt="sublime text3"></p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fjj7bmzswvj30j90kldgp.jpg" alt=""></p>
 <blockquote>
 <p>有时想运行调试一个小的C语言程序，不想动用VB等庞大的IDE，sublime就成了一个不错的选择，其自身的自动补全，语法高亮等功能非常适合对颜值和效率有要求的朋友。但sublime只是一个编译器，想要运行C程序，还得进行环境的配置，好在其有丰富的插件库供用户选择，网上查了许多mac下的C环境配置，现将搭建步骤分享给大家～供大家参考。</p>
 </blockquote>
@@ -183,7 +167,7 @@
 }
 ]
 }</code></p>
-<h4 id="2-保存为C-sublime-build-之后在Tools-工具-gt-Build-System-编译系统-里选择刚才配置的环境C"><a href="#2-保存为C-sublime-build-之后在Tools-工具-gt-Build-System-编译系统-里选择刚才配置的环境C" class="headerlink" title="2.保存为C.sublime.build 之后在Tools(工具)-&gt;Build System(编译系统)里选择刚才配置的环境C"></a>2.保存为C.sublime.build 之后在Tools(工具)-&gt;Build System(编译系统)里选择刚才配置的环境C</h4><p><img src="/images/sublime" alt="sublime build"></p>
+<h4 id="2-保存为C-sublime-build-之后在Tools-工具-gt-Build-System-编译系统-里选择刚才配置的环境C"><a href="#2-保存为C-sublime-build-之后在Tools-工具-gt-Build-System-编译系统-里选择刚才配置的环境C" class="headerlink" title="2.保存为C.sublime.build 之后在Tools(工具)-&gt;Build System(编译系统)里选择刚才配置的环境C"></a>2.保存为C.sublime.build 之后在Tools(工具)-&gt;Build System(编译系统)里选择刚才配置的环境C</h4><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fjj7clg4p4j30b80cst94.jpg" alt=""></p>
 <h4 id="3-环境配置好后，就可以新建一个程序例如Helloworld，文件保存时结尾为-c-然后shift-command-B-选择c编译运行即可"><a href="#3-环境配置好后，就可以新建一个程序例如Helloworld，文件保存时结尾为-c-然后shift-command-B-选择c编译运行即可" class="headerlink" title="3.环境配置好后，就可以新建一个程序例如Helloworld，文件保存时结尾为.c 然后shift + command + B 选择c编译运行即可"></a>3.环境配置好后，就可以新建一个程序例如Helloworld，文件保存时结尾为.c 然后shift + command + B 选择c编译运行即可</h4><blockquote>
 <p>因为结果是直接显示在sublime里的控制台上，目前不支持用户输入，所以比较麻烦，而mac上的Xcode却可以输入，大家自行选择。</p>
 </blockquote>

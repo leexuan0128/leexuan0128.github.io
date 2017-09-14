@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[sublime text3 MacOS X的C环境搭建]]></title>
+      <url>/2017/09/14/sublime-text3-MacOS-X%E7%9A%84C%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+      <content type="html"><![CDATA[<h1 id="Sublime-Text3-的C环境搭建"><a href="#Sublime-Text3-的C环境搭建" class="headerlink" title="Sublime Text3 的C环境搭建"></a>Sublime Text3 的C环境搭建</h1><hr>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fjj7bmzswvj30j90kldgp.jpg" alt=""></p>
+<blockquote>
+<p>有时想运行调试一个小的C语言程序，不想动用VB等庞大的IDE，sublime就成了一个不错的选择，其自身的自动补全，语法高亮等功能非常适合对颜值和效率有要求的朋友。但sublime只是一个编译器，想要运行C程序，还得进行环境的配置，好在其有丰富的插件库供用户选择，网上查了许多mac下的C环境配置，现将搭建步骤分享给大家～供大家参考。</p>
+</blockquote>
+<h4 id="1-打开sublime-text3，选择Tools-工具-gt-Build-System-编译系统-gt-New-Build-System-新建编译系统-将下列代码复制替换进去"><a href="#1-打开sublime-text3，选择Tools-工具-gt-Build-System-编译系统-gt-New-Build-System-新建编译系统-将下列代码复制替换进去" class="headerlink" title="1.打开sublime text3，选择Tools(工具)-&gt;Build System(编译系统)-&gt;New Build System(新建编译系统).将下列代码复制替换进去"></a>1.打开sublime text3，选择Tools(工具)-&gt;Build System(编译系统)-&gt;New Build System(新建编译系统).将下列代码复制替换进去</h4><p><code>{
+&quot;cmd&quot;: [&quot;gcc&quot;, &quot;${file}&quot;, &quot;-o&quot;, &quot;${file_path}/${file_base_name}&quot;],
+&quot;file_regex&quot;: &quot;^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$&quot;,
+&quot;working_dir&quot;: &quot;${file_path}&quot;,
+&quot;selector&quot;: &quot;source.c, source.c++&quot;,
+&quot;variants&quot;:
+[
+{
+&quot;name&quot;: &quot;Run&quot;,
+&quot;cmd&quot; : [&quot;${file_path}/${file_base_name}&quot;]
+}
+]
+}</code></p>
+<h4 id="2-保存为C-sublime-build-之后在Tools-工具-gt-Build-System-编译系统-里选择刚才配置的环境C"><a href="#2-保存为C-sublime-build-之后在Tools-工具-gt-Build-System-编译系统-里选择刚才配置的环境C" class="headerlink" title="2.保存为C.sublime.build 之后在Tools(工具)-&gt;Build System(编译系统)里选择刚才配置的环境C"></a>2.保存为C.sublime.build 之后在Tools(工具)-&gt;Build System(编译系统)里选择刚才配置的环境C</h4><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fjj7clg4p4j30b80cst94.jpg" alt=""></p>
+<h4 id="3-环境配置好后，就可以新建一个程序例如Helloworld，文件保存时结尾为-c-然后shift-command-B-选择c编译运行即可"><a href="#3-环境配置好后，就可以新建一个程序例如Helloworld，文件保存时结尾为-c-然后shift-command-B-选择c编译运行即可" class="headerlink" title="3.环境配置好后，就可以新建一个程序例如Helloworld，文件保存时结尾为.c 然后shift + command + B 选择c编译运行即可"></a>3.环境配置好后，就可以新建一个程序例如Helloworld，文件保存时结尾为.c 然后shift + command + B 选择c编译运行即可</h4><blockquote>
+<p>因为结果是直接显示在sublime里的控制台上，目前不支持用户输入，所以比较麻烦，而mac上的Xcode却可以输入，大家自行选择。</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> sublime </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[搭建属于自己的博客]]></title>
+      <url>/2017/09/12/%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<h1 id="如何利用GitHub-Hexo搭建属于自己的博客"><a href="#如何利用GitHub-Hexo搭建属于自己的博客" class="headerlink" title="如何利用GitHub+Hexo搭建属于自己的博客"></a>如何利用GitHub+Hexo搭建属于自己的博客</h1><hr>
+<h2 id="新手快速上路"><a href="#新手快速上路" class="headerlink" title="新手快速上路"></a>新手快速上路</h2><p><img src="/images/sticker-mule-189122.jpg" alt="lovely cat"></p>
+<blockquote>
+<p><strong>最近在学习markdown的语法，真的觉得很良心，易学上手。在搭建博客的同时，发现简书[<a href="http://www.jianshu.com" target="_blank" rel="external">http://www.jianshu.com</a>]<br>这个网站上有很多干货,特别是有关技术方面的，很适合喜欢自我探索的朋友，安利大家探索一下，可以学习到很多知识。之前好友Liang写了一篇文章是关于如何快速搭建博客，我觉得对刚刚入门的新手很有帮助，特意分享给大家。</strong></p>
+<p>链接网址：[<a href="https://isliangj.github.io/2017/09/08/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_blank" rel="external">https://isliangj.github.io/2017/09/08/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</a>]</p>
+<p><strong>转载的网址，非本文作者原创，转载需注明。</strong></p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> 技术 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello Guys]]></title>
+      <url>/2017/09/11/hello-world/</url>
+      <content type="html"><![CDATA[<p><img src="/images/mayur-gala-487.jpg" alt="love"></p>
+<p>Welcome to my blog(<a href="https://leexuan0128.github.io/)!" target="_blank" rel="external">https://leexuan0128.github.io/)!</a> This is a free place! I will be going to write any interesting and valueable posts.Expecting your comments. Absolutely,I will record the process of my first installation，sharing some useful information if you need～</p>
+<h2 id="Freshman-Guide-How-to-creat-a-new-blog"><a href="#Freshman-Guide-How-to-creat-a-new-blog" class="headerlink" title="Freshman Guide(How to creat a new blog)"></a>Freshman Guide(How to creat a new blog)</h2><h3 id="Github！"><a href="#Github！" class="headerlink" title="Github！"></a>Github！</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">First，you need a Github account,and <span class="keyword">then</span> building yourself repositories <span class="keyword">in</span> it.</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://github.com/" target="_blank" rel="external">Github</a></p>
+<h3 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">You still need the environment of the Hexo,before this，you should verify you had installed the environment of Git and Node.js. Tips：searching on the google how to install git and node.js.</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></p>
+<h3 id="Creat-local-site"><a href="#Creat-local-site" class="headerlink" title="Creat local site"></a>Creat local site</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">After above stages,you can creat your <span class="built_in">local</span> site now!you can name a folder whatever you want.</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://github.com/bubkoo/hexo-filter-flowchart" target="_blank" rel="external">site</a></p>
+<h3 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Modify your <span class="built_in">local</span> files(_config.yml),including your custom theme and style.</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/themes/" target="_blank" rel="external">Themes</a></p>
+<h3 id="This-is-a-simplified-tutorials-following-days-I-will-offer-a-specific-version"><a href="#This-is-a-simplified-tutorials-following-days-I-will-offer-a-specific-version" class="headerlink" title="This is a simplified tutorials,following days I will offer a specific version."></a>This is a simplified tutorials,following days I will offer a specific version.</h3>]]></content>
+      
+        
+    </entry>
+    
+  
+  
+</search>
