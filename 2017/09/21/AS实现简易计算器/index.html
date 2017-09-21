@@ -1,11 +1,156 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search> 
+<!DOCTYPE html>
+<html class="full-height">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   
-    
-    <entry>
-      <title><![CDATA[AS实现简易计算器]]></title>
-      <url>/2017/09/21/AS%E5%AE%9E%E7%8E%B0%E7%AE%80%E6%98%93%E8%AE%A1%E7%AE%97%E5%99%A8/</url>
-      <content type="html"><![CDATA[<h1 id="android简易计算器-四则运算"><a href="#android简易计算器-四则运算" class="headerlink" title="android简易计算器(四则运算)"></a>android简易计算器(四则运算)</h1><blockquote>
+  <title>AS实现简易计算器 | xuan&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="android简易计算器(四则运算) android studio 实现简易计算器(源代码)   工程界面：  布局可以根据自己喜好进行更改  activity_main.xml中的源代码: 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565">
+<meta name="keywords" content="android studio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AS实现简易计算器">
+<meta property="og:url" content="http://yoursite.com/2017/09/21/AS实现简易计算器/index.html">
+<meta property="og:site_name" content="xuan&#39;s blog">
+<meta property="og:description" content="android简易计算器(四则运算) android studio 实现简易计算器(源代码)   工程界面：  布局可以根据自己喜好进行更改  activity_main.xml中的源代码: 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fjrjs5zj6cj31hc0u0ac8.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fjrkaq83stj30cl0j2q49.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fjrkanhto8j30cm0j9dgu.jpg">
+<meta property="og:updated_time" content="2017-09-21T14:40:17.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AS实现简易计算器">
+<meta name="twitter:description" content="android简易计算器(四则运算) android studio 实现简易计算器(源代码)   工程界面：  布局可以根据自己喜好进行更改  activity_main.xml中的源代码: 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fjrjs5zj6cj31hc0u0ac8.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="xuan&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/nav.css">
+<link rel="stylesheet" href="/css/layout.css">
+  
+
+</head>
+
+<body>
+  <header id="navbar" class="overflow-hidden">
+  <div class="container">
+    <nav class="nav">
+         <div class="nav-left">
+            <a href="/" class="nav-item" style="font-size: 20px;">
+              <span class="logo">Xuan</span>'s Blog
+            </a>
+         </div>
+        <div class="nav-center is-hidden position-relative" id="search_container">
+            <div class="nav-item full-width full-height">
+                <i class="fa fa-search has-padding" aria-hidden="true"></i>
+                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
+                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div id="search_result"></div>
+        </div>
+        <div class="nav-right nav-menu">
+            <a class="nav-item" id="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+            
+            <a class="nav-item" href="/">
+                Home
+            </a>
+            
+            <a class="nav-item" href="/about">
+                About
+            </a>
+            
+        </div>
+        <span class="nav-toggle" id="navMenuDropdown">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
+            
+            <a class="nav-item flex-1" href="/">
+                Home
+            </a>
+            
+            <a class="nav-item flex-1" href="/about">
+                About
+            </a>
+            
+        </div>
+    </nav>
+  </div>
+</header>
+
+  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
+      <div class="main-inner-content">
+          <!--博文页面-->
+
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
+        background-size: cover;
+        background-color: lightsteelblue;
+    }
+
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
+    }
+
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    .flow-chart {
+        text-align: center;
+    }
+
+    img[alt="post-cover"] {
+        display: none;
+    }
+</style>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>AS实现简易计算器</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="https://avatars3.githubusercontent.com/u/29593367?v=4&u=52694e53ae74066be5677eacf887392b208d9262&s=400">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> Xuan</span>
+                <span class="post-date sub-title">at: 2017-09-21</span>
+            </div>
+            
+                <div>
+                    
+                         <a class="tag is-post-tag" href="/tags/android-studio/">android studio</a>
+                    
+                </div>
+            
+        </div>
+        <div class="content" style="overflow: auto">
+            <h1 id="android简易计算器-四则运算"><a href="#android简易计算器-四则运算" class="headerlink" title="android简易计算器(四则运算)"></a>android简易计算器(四则运算)</h1><blockquote>
 <p>android studio 实现简易计算器(源代码)</p>
 </blockquote>
 <hr>
@@ -24,210 +169,72 @@
 <hr>
 <h4 id="我没有用第三方的虚拟机来测试，直接在AS中新建了一个虚拟设备，稍稍有点卡顿，还是建议大家使用第三方模拟器，如genymotion-mumu等。测试效果："><a href="#我没有用第三方的虚拟机来测试，直接在AS中新建了一个虚拟设备，稍稍有点卡顿，还是建议大家使用第三方模拟器，如genymotion-mumu等。测试效果：" class="headerlink" title="我没有用第三方的虚拟机来测试，直接在AS中新建了一个虚拟设备，稍稍有点卡顿，还是建议大家使用第三方模拟器，如genymotion,mumu等。测试效果："></a>我没有用第三方的虚拟机来测试，直接在AS中新建了一个虚拟设备，稍稍有点卡顿，还是建议大家使用第三方模拟器，如genymotion,mumu等。测试效果：</h4><p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fjrkaq83stj30cl0j2q49.jpg" alt=""></p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fjrkanhto8j30cm0j9dgu.jpg" alt=""></p>
-]]></content>
-      
-        
-        <tags>
+
+        </div>
+        <div class="post-reply">
             
-            <tag> android studio </tag>
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
             
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[一部手机的最高礼遇]]></title>
-      <url>/2017/09/16/%E4%B8%80%E9%83%A8%E6%89%8B%E6%9C%BA%E7%9A%84%E6%9C%80%E9%AB%98%E7%A4%BC%E9%81%87/</url>
-      <content type="html"><![CDATA[<h2 id="废旧手机也可以成为艺术-——-iphone4的拆解裱装"><a href="#废旧手机也可以成为艺术-——-iphone4的拆解裱装" class="headerlink" title="废旧手机也可以成为艺术 —— iphone4的拆解裱装"></a>废旧手机也可以成为艺术 —— iphone4的拆解裱装</h2><hr>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjlmfnpphoj31kw11xjxa.jpg" alt=""></p>
-<blockquote>
-<p>其实很早之前就看到过有关此类的文章，但那时心里想的是“谁那么有闲钱会把好好的手机拆了挂起来。”可能你也会这么想，但哪天如果你闲下来，看着换代的电子产品，与其让他们在角落里吃灰，不如给闲置的它们一个最高的礼遇，下面的内容会对你有些帮助。</p>
-<p>每一款手机都有着曾经辉煌过的时光，因为它们的配置放在当下可能已经落后太多，但是比起放在抽屉里落灰，将手机装裱起来，大概是一个最有情怀的结局了。这款iphone4在苹果的产品历史上实在是太过经典，占有相当重的分量。也给我留下了很多回忆，伴随我走过大学和军营，机身还算保养的完好。如今iphone已经更新到了iphone x,这款iphone4就当是对iphone10周年的致敬吧。</p>
-</blockquote>
-<p>整个过程大约需要3到4个小时左右完成，建议吃饱喝足找个小伙伴一起参与，体验感会更好。(ps：尽量不要拉女生来帮忙，女孩子大概心里只会想这是什么鬼啦！)哈哈，闲话不多说，进入正题。</p>
-<h3 id="工具准备"><a href="#工具准备" class="headerlink" title="工具准备"></a>工具准备</h3><ul>
-<li>iphone4 一部</li>
-<li>iphone专用螺丝刀一套 </li>
-<li>B-7000工具胶，502胶</li>
-<li>塑料撬片 镊子</li>
-<li>标本框(我选的是A4大小 因为是4所以刚刚好，大一点的手机可以考虑A3尺寸)</li>
-<li>白色硬卡纸(颜色自选，白色底板配黑色零件更美观)</li>
-</ul>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjlj0um20ej31kw16odpe.jpg" alt=""></p>
-<hr>
-<h3 id="拆解步骤"><a href="#拆解步骤" class="headerlink" title="拆解步骤"></a>拆解步骤</h3><p>1.拆开手机底部两颗螺丝，向上推约2cm取下手机后盖</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fjlj37o7k0j30gg0cct8x.jpg" alt=""></p>
-<p>2.拧下电池扣屏蔽罩的小螺丝 </p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjlj4q22tsj30gg0cc3yy.jpg" alt=""></p>
-<p>3.用塑料撬棒小心将电池排线从主板分离开</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjlj6rlfgrj30gg0ccgm7.jpg" alt=""></p>
-<p>4.用塑料拉片将电池小心拉出</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fjlj8l5vj2j30gg0ccaae.jpg" alt=""></p>
-<p>5.推出sim卡槽，取出sim卡，最简单的一步</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjlj98xbrqj30gg0ccgls.jpg" alt=""></p>
-<p>6.取下如图两颗螺丝</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjlj9p03nkj30gg0cc0tb.jpg" alt=""></p>
-<p>7.用撬棒将固定片从主板取下</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjljb29eh5j30gg0ccwey.jpg" alt=""></p>
-<p>8.小心拉起带状尾插排线</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjljbosqxmj30gg0cbt9a.jpg" alt=""></p>
-<p>9.撬开天线排线如图</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjljehdopcj30gg0cbq3e.jpg" alt=""></p>
-<p>10.取下左下角主板上的一颗螺丝</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjljf1def0j30gg0ccmxo.jpg" alt=""></p>
-<p>11.取下上部Wi-Fi模块的5颗螺丝</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjljfvizm1j30gg0ccwet.jpg" alt=""></p>
-<p>12.用撬棒小心撬开主板上天线排线</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjljxcyowmj30gg0cbt93.jpg" alt=""></p>
-<p>13.用撬棒撬开后置摄像头排线，小心取下摄像头</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjljy0gse6j30gg0cc0t6.jpg" alt=""></p>
-<p>14.取下下图中的螺丝</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjljz60zqyj30gg0cczkw.jpg" alt=""></p>
-<p>15.用塑料撬棒松开主板座子上的排线，依次为：</p>
-<ul>
-<li>触摸排线（从底部撬起）</li>
-<li>显示排线（从底部撬起）</li>
-<li>耳机插孔和音量键排线（从顶部撬起）</li>
-<li>顶部麦克风和电源键排线（从顶部撬起）</li>
-<li>前置摄像头排线（从顶部撬起）</li>
-</ul>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fjlk1l5lx5j30gg0cbgm2.jpg" alt=""></p>
-<p>16.这颗螺丝是平口的，需要用到平口螺丝刀，小心取下支架螺丝</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjlk2f1ygoj30gg0cct96.jpg" alt=""></p>
-<p>17.从机身中小心取下主板</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjlk2uwlqpj30gg0ccjru.jpg" alt=""></p>
-<p>18.取下扬声器模块螺丝，从机身中小心取下扬声器</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjlk3lqupxj30gg0cc74h.jpg" alt=""><br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjlk40aaumj30gg0ccq3c.jpg" alt=""></p>
-<p>19.取下震动器螺丝，小心取下震动器</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjlk4j4aahj30gg0ccmxd.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjlk6211v6j30gg0cbwex.jpg" alt=""></p>
-<p>20.取下前面板固定螺丝</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjlk77b8dsj30gg0cbt8x.jpg" alt=""></p>
-<p>21.取下侧面板三个大头螺丝</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjlk7n27n9j30gg0cbmxc.jpg" alt=""></p>
-<p>22.取下靠近麦克风螺丝</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fjlk8a5ap3j30gg0cc74g.jpg" alt=""></p>
-<p>23.取下靠近排线处的螺丝</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fjlk8r8n99j30gg0cbgls.jpg" alt=""></p>
-<p>24.取下靠近sim卡槽的三颗大螺丝 和靠近后置摄像头的螺丝</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjlk9a2zr7j30gg0cc74m.jpg" alt=""></p>
-<p>25.撬开面板</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fjlk9xkfh1j30gg0ccglu.jpg" alt=""></p>
-<p>26.小心取下前面板(注意排线)</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fjlkahgj3tj30gg0cbwes.jpg" alt=""></p>
-<hr>
-<blockquote>
-<p>至此主体基本上就拆解完成了，当然如果你的标本框还有空间，你还可以进一步将前置摄像头，话筒，音响等小部件从主板上拆下，加入一些自己的独特风格。拆下的小零件我没有进行清洗，主要是因为太懒。</p>
-<p>接下来就是拆机零件的排版布局了，这一步相当重要，直接决定了最终成品的效果。每个人的风格不同，大体就是先确定大部件的位置，再将零部件填方进去，这样就不会没思路了。粘放小螺丝是整个过程中最磨人的一个环节，很难对齐。建议大家可以先在底板上多尝试几次，或者参考一下别人的成品。我因为没有选购A3尺寸的标本框，不得已舍弃了一些部件。摆放时尽可能让部件横平竖直，显的更有美学味道。最后还是要感谢一下好基友Liang，整个过程是我和Liang共同完成的，我负责拆，他负责摆。整体效率快了不少，一个上午就可以搞定。</p>
-</blockquote>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fjlkedljhqj31kw16p47w.jpg" alt=""></p>
-<blockquote>
-<p>当所有零部件全部摆好粘贴好之后，静置几个小时等胶干。将半成品小心装入框内，就可以挂起来欣赏了，虽然看起来不是那么容易完成，但是做好之会有很大的成就感，简直就是一件艺术品！动手能力强的朋友们一定要试一试哦。</p>
-</blockquote>
-<p><code>PS：拆解工具某宝自行搜索大概20元左右，标本框30元左右，整个体验感还是不错的，尤其是在拆解的过程中也顺便学习了解了手机的部件构造。文中部分图片引自ifixit官方网站。对拆解过程如有疑问，请移步微博留言。</code></p>
-]]></content>
-      
-        <categories>
             
-            <category> 艺术 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> iphone拆解 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[sublime text3 MacOS X的C环境搭建]]></title>
-      <url>/2017/09/14/sublime-text3-MacOS-X%E7%9A%84C%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
-      <content type="html"><![CDATA[<h1 id="Sublime-Text3-的C环境搭建"><a href="#Sublime-Text3-的C环境搭建" class="headerlink" title="Sublime Text3 的C环境搭建"></a>Sublime Text3 的C环境搭建</h1><hr>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fjj7bmzswvj30j90kldgp.jpg" alt=""></p>
-<blockquote>
-<p>有时想运行调试一个小的C语言程序，不想动用VB等庞大的IDE，sublime就成了一个不错的选择，其自身的自动补全，语法高亮等功能非常适合对颜值和效率有要求的朋友。但sublime只是一个编译器，想要运行C程序，还得进行环境的配置，好在其有丰富的插件库供用户选择，网上查了许多mac下的C环境配置，现将搭建步骤分享给大家～供大家参考。</p>
-</blockquote>
-<h4 id="1-打开sublime-text3，选择Tools-工具-gt-Build-System-编译系统-gt-New-Build-System-新建编译系统-将下列代码复制替换进去"><a href="#1-打开sublime-text3，选择Tools-工具-gt-Build-System-编译系统-gt-New-Build-System-新建编译系统-将下列代码复制替换进去" class="headerlink" title="1.打开sublime text3，选择Tools(工具)-&gt;Build System(编译系统)-&gt;New Build System(新建编译系统).将下列代码复制替换进去"></a>1.打开sublime text3，选择Tools(工具)-&gt;Build System(编译系统)-&gt;New Build System(新建编译系统).将下列代码复制替换进去</h4><p><code>{
-&quot;cmd&quot;: [&quot;gcc&quot;, &quot;${file}&quot;, &quot;-o&quot;, &quot;${file_path}/${file_base_name}&quot;],
-&quot;file_regex&quot;: &quot;^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$&quot;,
-&quot;working_dir&quot;: &quot;${file_path}&quot;,
-&quot;selector&quot;: &quot;source.c, source.c++&quot;,
-&quot;variants&quot;:
-[
-{
-&quot;name&quot;: &quot;Run&quot;,
-&quot;cmd&quot; : [&quot;${file_path}/${file_base_name}&quot;]
-}
-]
-}</code></p>
-<h4 id="2-保存为C-sublime-build-之后在Tools-工具-gt-Build-System-编译系统-里选择刚才配置的环境C"><a href="#2-保存为C-sublime-build-之后在Tools-工具-gt-Build-System-编译系统-里选择刚才配置的环境C" class="headerlink" title="2.保存为C.sublime.build 之后在Tools(工具)-&gt;Build System(编译系统)里选择刚才配置的环境C"></a>2.保存为C.sublime.build 之后在Tools(工具)-&gt;Build System(编译系统)里选择刚才配置的环境C</h4><p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fjj7clg4p4j30b80cst94.jpg" alt=""></p>
-<h4 id="3-环境配置好后，就可以新建一个程序例如Helloworld，文件保存时结尾为-c-然后shift-command-B-选择c编译运行即可"><a href="#3-环境配置好后，就可以新建一个程序例如Helloworld，文件保存时结尾为-c-然后shift-command-B-选择c编译运行即可" class="headerlink" title="3.环境配置好后，就可以新建一个程序例如Helloworld，文件保存时结尾为.c 然后shift + command + B 选择c编译运行即可"></a>3.环境配置好后，就可以新建一个程序例如Helloworld，文件保存时结尾为.c 然后shift + command + B 选择c编译运行即可</h4><blockquote>
-<p>因为结果是直接显示在sublime里的控制台上，目前不支持用户输入，所以比较麻烦，而mac上的Xcode却可以输入，大家自行选择。</p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> 技术 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> sublime </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[搭建属于自己的博客]]></title>
-      <url>/2017/09/12/%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
-      <content type="html"><![CDATA[<h1 id="如何利用GitHub-Hexo搭建属于自己的博客"><a href="#如何利用GitHub-Hexo搭建属于自己的博客" class="headerlink" title="如何利用GitHub+Hexo搭建属于自己的博客"></a>如何利用GitHub+Hexo搭建属于自己的博客</h1><hr>
-<h2 id="新手快速上路"><a href="#新手快速上路" class="headerlink" title="新手快速上路"></a>新手快速上路</h2><p><img src="/images/sticker-mule-189122.jpg" alt="lovely cat"></p>
-<blockquote>
-<p><strong>最近在学习markdown的语法，真的觉得很良心，易学上手。在搭建博客的同时，发现简书[<a href="http://www.jianshu.com" target="_blank" rel="external">http://www.jianshu.com</a>]<br>这个网站上有很多干货,特别是有关技术方面的，很适合喜欢自我探索的朋友，安利大家探索一下，可以学习到很多知识。之前好友Liang写了一篇文章是关于如何快速搭建博客，我觉得对刚刚入门的新手很有帮助，特意分享给大家。</strong></p>
-<p>链接网址：[<a href="https://isliangj.github.io/2017/09/08/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" target="_blank" rel="external">https://isliangj.github.io/2017/09/08/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</a>]</p>
-<p><strong>转载的网址，非本文作者原创，转载需注明。</strong></p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> 技术 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hello Guys]]></title>
-      <url>/2017/09/11/hello-world/</url>
-      <content type="html"><![CDATA[<p><img src="/images/mayur-gala-487.jpg" alt="love"></p>
-<p>Welcome to my blog(<a href="https://leexuan0128.github.io/)!" target="_blank" rel="external">https://leexuan0128.github.io/)!</a> This is a free place! I will be going to write any interesting and valueable posts.Expecting your comments. Absolutely,I will record the process of my first installation，sharing some useful information if you need～</p>
-<h2 id="Freshman-Guide-How-to-creat-a-new-blog"><a href="#Freshman-Guide-How-to-creat-a-new-blog" class="headerlink" title="Freshman Guide(How to creat a new blog)"></a>Freshman Guide(How to creat a new blog)</h2><h3 id="Github！"><a href="#Github！" class="headerlink" title="Github！"></a>Github！</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">First，you need a Github account,and <span class="keyword">then</span> building yourself repositories <span class="keyword">in</span> it.</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://github.com/" target="_blank" rel="external">Github</a></p>
-<h3 id="Environment"><a href="#Environment" class="headerlink" title="Environment"></a>Environment</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">You still need the environment of the Hexo,before this，you should verify you had installed the environment of Git and Node.js. Tips：searching on the google how to install git and node.js.</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a></p>
-<h3 id="Creat-local-site"><a href="#Creat-local-site" class="headerlink" title="Creat local site"></a>Creat local site</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">After above stages,you can creat your <span class="built_in">local</span> site now!you can name a folder whatever you want.</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://github.com/bubkoo/hexo-filter-flowchart" target="_blank" rel="external">site</a></p>
-<h3 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Modify your <span class="built_in">local</span> files(_config.yml),including your custom theme and style.</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/themes/" target="_blank" rel="external">Themes</a></p>
-<h3 id="This-is-a-simplified-tutorials-following-days-I-will-offer-a-specific-version"><a href="#This-is-a-simplified-tutorials-following-days-I-will-offer-a-specific-version" class="headerlink" title="This is a simplified tutorials,following days I will offer a specific version."></a>This is a simplified tutorials,following days I will offer a specific version.</h3>]]></content>
-      
-        
-    </entry>
-    
-  
-  
-</search>
+        </div>
+    </div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+      </div>
+  </div>
+  <style>
+  #footer {
+    min-height: 10vh;
+    background: black;
+    color: #fff;
+  }
+
+  #footer a {
+    color: #e1e1e1;
+  }
+</style>
+<footer id="footer" class="has-text-centered is-flex center">
+  <div class="container has-padding">
+    <div>
+      <div>
+        <!--请您保留作者署名, 主题制作来之不易-->
+        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
+        <br>
+        Copyright © xuan 2017
+        <br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/search_core.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
