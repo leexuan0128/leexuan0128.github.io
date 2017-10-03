@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="full-height">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//cdn.bootcss.com/bulma/0.4.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  
+  <title>ios11下的免费VPN搭建 | xuan&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="基于shadowsocks的ios11快速VPN搭建  ios11更新后发现之前许多好用的vpn要么不是被和谐了，要么就是开始天价收费了。本着分享技术造福大众的精神，为大家分享一套免费的搭建shadowsocks的vpn操作。   本教程对无计算机基础的朋友同样友好，只需执行步骤，请放心食用，图片，文字都看完就OK啦。  首先，我们需要一款下载一款叫做”SsrConnectPro”的app，如图：">
+<meta name="keywords" content="ios11VPN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ios11下的免费VPN搭建">
+<meta property="og:url" content="http://yoursite.com/2017/10/03/ios11下免费VPN的搭建/index.html">
+<meta property="og:site_name" content="xuan&#39;s blog">
+<meta property="og:description" content="基于shadowsocks的ios11快速VPN搭建  ios11更新后发现之前许多好用的vpn要么不是被和谐了，要么就是开始天价收费了。本着分享技术造福大众的精神，为大家分享一套免费的搭建shadowsocks的vpn操作。   本教程对无计算机基础的朋友同样友好，只需执行步骤，请放心食用，图片，文字都看完就OK啦。  首先，我们需要一款下载一款叫做”SsrConnectPro”的app，如图：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fk4vcvqey5j30r50iljsf.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fk4vncn7mkj30bt0gn3yy.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fk4vrxegelj30gu0ilaar.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fk4vxictzwj30c00jmdgk.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcly1fk4w2sr71zj30w309vaag.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fk4w8a3et9j30bz07r3yj.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fk4w9fjen5j30bg0bn3z2.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcly1fk4wj21uc0j30bw0j60sz.jpg">
+<meta property="og:updated_time" content="2017-10-03T03:39:34.802Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ios11下的免费VPN搭建">
+<meta name="twitter:description" content="基于shadowsocks的ios11快速VPN搭建  ios11更新后发现之前许多好用的vpn要么不是被和谐了，要么就是开始天价收费了。本着分享技术造福大众的精神，为大家分享一套免费的搭建shadowsocks的vpn操作。   本教程对无计算机基础的朋友同样友好，只需执行步骤，请放心食用，图片，文字都看完就OK啦。  首先，我们需要一款下载一款叫做”SsrConnectPro”的app，如图：">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fk4vcvqey5j30r50iljsf.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="xuan&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/css/nav.css">
+<link rel="stylesheet" href="/css/layout.css">
+  
+
+</head>
+
+<body>
+  <header id="navbar" class="overflow-hidden">
+  <div class="container">
+    <nav class="nav">
+         <div class="nav-left">
+            <a href="/" class="nav-item" style="font-size: 20px;">
+              <span class="logo">Xuan</span>'s Blog
+            </a>
+         </div>
+        <div class="nav-center is-hidden position-relative" id="search_container">
+            <div class="nav-item full-width full-height">
+                <i class="fa fa-search has-padding" aria-hidden="true"></i>
+                <input type="text" id="search_input" class="search-input full-height full-width" placeholder="Search post" autofocus>
+                <i id="close_search" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div id="search_result"></div>
+        </div>
+        <div class="nav-right nav-menu">
+            <a class="nav-item" id="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+            
+            <a class="nav-item" href="/">
+                Home
+            </a>
+            
+            <a class="nav-item" href="/about">
+                About
+            </a>
+            
+        </div>
+        <span class="nav-toggle" id="navMenuDropdown">
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <div class="navbar-menu position-absolute full-width content-box is-hidden-desktop is-flex flex-column center" style="top: 100%;">
+            
+            <a class="nav-item flex-1" href="/">
+                Home
+            </a>
+            
+            <a class="nav-item flex-1" href="/about">
+                About
+            </a>
+            
+        </div>
+    </nav>
+  </div>
+</header>
+
+  <div id="main-wrap" class="position-relative" style="margin-top: 55px;">
+      <div class="main-inner-content">
+          <!--博文页面-->
+
+<style>
+    .header-box {
+        height: 370px;
+        filter: blur(10px);
+        background-size: cover;
+        background-color: lightsteelblue;
+    }
+
+    .post-box {
+        padding: 15px;
+        padding-top: 60px;
+        min-height: 80vh;
+        margin-top: -200px;
+        border-radius: 4px;
+        background-color: rgba(255,255,255,.8);
+    }
+
+    .post-avatar {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+    }
+
+    .flow-chart {
+        text-align: center;
+    }
+
+    img[alt="post-cover"] {
+        display: none;
+    }
+</style>
+<header>
+    <div id="header_box" class="header-box"></div>
+</header>
+<section>
+    <div class="container post-box">
+        <div class="content post-title is-flex center flex-column" style="margin-bottom: 70px; overflow: auto;">
+            <h1 class="has-text-centered" style="padding-bottom: 10px; border-bottom: 3px solid #fff">
+                <strong>ios11下的免费VPN搭建</strong>
+            </h1>
+            
+            <div class="is-flex align-center">
+                <img class="post-avatar" src="https://avatars3.githubusercontent.com/u/29593367?v=4&u=52694e53ae74066be5677eacf887392b208d9262&s=400">
+                <span style="padding:0 10px;"> <span class="sub-title">By</span> Xuan</span>
+                <span class="post-date sub-title">at: 2017-10-03</span>
+            </div>
+            
+                <div>
+                    
+                         <a class="tag is-post-tag" href="/tags/ios11VPN/">ios11VPN</a>
+                    
+                </div>
+            
+        </div>
+        <div class="content" style="overflow: auto">
+            <h1 id="基于shadowsocks的ios11快速VPN搭建"><a href="#基于shadowsocks的ios11快速VPN搭建" class="headerlink" title="基于shadowsocks的ios11快速VPN搭建"></a>基于shadowsocks的ios11快速VPN搭建</h1><hr>
+<blockquote>
+<p>ios11更新后发现之前许多好用的vpn要么不是被和谐了，要么就是开始天价收费了。本着分享技术造福大众的精神，为大家分享一套<em>免费</em>的搭建shadowsocks的vpn操作。</p>
+</blockquote>
+<ul>
+<li>本教程对无计算机基础的朋友同样友好，只需执行步骤，请放心食用，图片，文字都看完就OK啦。</li>
+</ul>
+<p>首先，我们需要一款下载一款叫做”SsrConnectPro”的app，如图：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fk4vcvqey5j30r50iljsf.jpg" alt=""></p>
+<blockquote>
+<p>软件安全不放心可以自己去 github 网站下载。</p>
+</blockquote>
+<p>下载好后，打开app进行配置。界面是这样子的：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fk4vncn7mkj30bt0gn3yy.jpg" alt=""></p>
+<p>点右上角+号，添加自定义配置。<br><em>重点来了</em>，一般情况下，此时我们要在app内输入购买的vpn账号密码等，而这一步我们要做的很简单，从<a href="https://get.freevs.org/" target="_blank" rel="external">freess</a>获取免费的账号密码及连接端口，如图：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fk4vrxegelj30gu0ilaar.jpg" alt=""><br>选择FreeSS-Reset password 下的三个配置中的一个，优先US。(需要说明的是，每12小时系统会更换一次密码，所以我们要做的就是及时更新密码即可，这个免费的代价还是可以接受的)</p>
+<blockquote>
+<p>网站被查的很严，大家及时收藏新地址……</p>
+</blockquote>
+<p>回到app内，进行配置，如图：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fk4vxictzwj30c00jmdgk.jpg" alt=""><br><img src="https://ws1.sinaimg.cn/large/006tKfTcly1fk4w2sr71zj30w309vaag.jpg" alt=""></p>
+<ul>
+<li>Type 默认不用管</li>
+<li>Name 你的vpn名字，随便起。</li>
+<li>Server 就是上图中的Adress(IP)</li>
+<li>Port 同上</li>
+<li>Password 同上</li>
+<li>ProxyMethod 默认不管</li>
+<li>Method 选择对应的，US就是chacha20，Japan就是rc4-md5</li>
+</ul>
+<p>点击save configuration，之后点击有黑色箭头那一行</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fk4w8a3et9j30bz07r3yj.jpg" alt=""></p>
+<p>系统提示都点允许</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcly1fk4w9fjen5j30bg0bn3z2.jpg" alt=""></p>
+<p>至此，搭建vpn的步骤就完成啦，不用花一分钱，5分钟就可以搞定。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcly1fk4wj21uc0j30bw0j60sz.jpg" alt=""></p>
+<blockquote>
+<p>去浏览器输入google试试看能否登录。如果登录不上，回到app内，点击Ping按钮，再试一次就好啦。如果之前可以登录，第二天登录不上了，只需要去刚才的网址获取一下最新的密码即可。</p>
+</blockquote>
+
+        </div>
+        <div class="post-reply">
+            
+                <!-- 来必力City版安装代码 -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTE4Ni81NzUz">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+
+                            if (typeof LivereTower === 'function') { return; }
+
+                            j = d.createElement(s);
+                            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                            j.async = true;
+
+                            e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+                </div>
+                <!-- City版安装代码已完成 -->
+            
+            
+        </div>
+    </div>
+</section>
+<script>
+    // 获取第一张图, 用以当封面背景图
+    var img = document.querySelectorAll('img')[1]
+
+    if (img) {
+        var header_box = document.querySelector('#header_box')
+        header_box.style.backgroundImage = 'url('+ img.src +')'
+    }
+</script>
+      </div>
+  </div>
+  <style>
+  #footer {
+    min-height: 10vh;
+    background: black;
+    color: #fff;
+  }
+
+  #footer a {
+    color: #e1e1e1;
+  }
+</style>
+<footer id="footer" class="has-text-centered is-flex center">
+  <div class="container has-padding">
+    <div>
+      <div>
+        <!--请您保留作者署名, 主题制作来之不易-->
+        Theme by <a href="http://haojen.github.io/">Haojen Ma</a>
+        <br>
+        Copyright © xuan 2017
+        <br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/search_core.js"></script>
+<script src="/js/script.js"></script>
+
+</body>
+</html>
