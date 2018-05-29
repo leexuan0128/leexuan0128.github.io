@@ -109,6 +109,34 @@
         <div class="box">
             <article class="media">
                 
+                <a href="/2018/05/29/LaTex快速入门/">
+                    
+                    <div class="media-left">
+                        <figure class="image is-128x128">
+                            <img src="https://ws3.sinaimg.cn/large/006tNc79ly1frs9imdqjhj30h30d7dgk.jpg" style="height: 100%; width: 100%">
+                        </figure>
+                    </div>
+                    
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>LaTex快速入门</strong> <small class="post-date">at: 2018-05-29</small>
+                                <br>
+                                用LaTeX武装你的论文此篇为写给一些想快速入门 LaTeX 的朋友.熟练掌握之后，可以完全代替Word，Wps等软件。
+
+LaTeX 是个排版工具，快速使用并且活学活用才是硬道理。要相信只要得法， 其实 LaTeX 很简单，不要因为有一些 LaTeX 学习曲线很陡的说法而心生畏惧。  
+什么是LaTex&quot;LaTeX， 是一种基于TEX的排版..
+                            </p>
+                            <button class="button is-info">Read</button>
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+    
+        <div class="box">
+            <article class="media">
+                
                 <a href="/2018/05/29/Markdown语法笔记/">
                     
                     <div class="media-left">
@@ -164,5 +192,20 @@
 <script src="/js/search_core.js"></script>
 <script src="/js/script.js"></script>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
